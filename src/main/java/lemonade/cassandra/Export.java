@@ -21,12 +21,12 @@ public class Export
 {	
     public static void main( String[] args )
     {
-    	String keyspace = "ssp";
-    	String table = "table_name";
+    	String keyspace = "nextext";
+    	String table = "sms_user_profiles";
     	
-    	String cassandra_host = "my.cassandra.host.com";
-    	String cassandra_username = "user";
-    	String cassandra_password = "password";
+    	String cassandra_host = "10.83.116.210";
+//     	String cassandra_username = "user";
+//     	String cassandra_password = "password";
     	
     	//////
     	
@@ -39,8 +39,8 @@ public class Export
     	}
     	
 		Cluster.Builder clusterBuilder = Cluster.builder()
-			                .addContactPoints(cassandra_host)
-			                .withCredentials(cassandra_username, cassandra_password);
+			                .addContactPoints(cassandra_host);
+// 			                .withCredentials(cassandra_username, cassandra_password);
     	Cluster cluster = clusterBuilder.build();
     	Session session	= cluster.connect(keyspace);
     	
